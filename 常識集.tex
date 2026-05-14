@@ -43,9 +43,54 @@ lineskip=-0.5ex
 
 \mathtoolsset{showonlyrefs=true}
 
-\title{西森スピングラス 常識集}
+\title{ランダム行列 常識集}
 \author{東京大学 理学系研究科物理学専攻 修士1年 平松大門}
 \begin{document}
 \maketitle
+\section{Getting Started}
+\begin{itemize}
+    \item Gaussian Ensemblesの代表例3つは？
+    \begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+略称 & 正式名称&行列の性質&Dyson Index $\beta$\\
+\hline
+GOE & Gaussian Orthogonal Ensemble & 実対称行列\quad $H=H^T$ &1
+\\
+\hline
+GUE & Gaussian Unitary Ensemble&エルミート行列 \quad$H=H^\dagger$ &2
+\\
+\hline
+GSE &Gaussian Symplectic Ensemble& 四元数自己双対エルミート行列 &4
+\\
+\hline
+\end{tabular}
+\end{table}
+
+Dyson Indexは行列の成分が持つ実自由度の数を表す。
+
+\sk
+\item 重積分の変数変換は？
+\[
+\int\prod_i dx_i \,f(x_1, \cdots ,x_n) = \int \prod_i dy_i\, \left|\frac{\partial (x_1, \cdots , x_n)}{\partial (y_1, \cdots ,y_n)}\right|f\left(x_1(\bm{y}), \cdots, x_n(\bm{y})\right)
+\]
+
+\end{itemize}
+
+\newpage
+
+\section{Value the Eigenvalue}
+\begin{itemize}
+    \item Wigner予想とは？
+    
+    ランダム行列の固有値間隔の分布についての予想。$2\times 2$のGOEの固有値間隔$s$の分布$P(s)$を期待値が1になるようリスケールした分布$\tilde{P}(s)$は
+    \[
+    \tilde{P}(s)=\frac{\pi}{2}s\exp(-\frac{\pi}{4}s^2)
+    \]
+    となるが、$N\times N$でも似た分布になると予想した。
+    固有値間隔が重なる確率が0、つまり固有値同士は反発することを意味する。
+\end{itemize}
+
 
 \end{document}
