@@ -76,21 +76,52 @@ Dyson Indexは行列の成分が持つ実自由度の数を表す。
 \[
 \int\prod_i dx_i \,f(x_1, \cdots ,x_n) = \int \prod_i dy_i\, \left|\frac{\partial (x_1, \cdots , x_n)}{\partial (y_1, \cdots ,y_n)}\right|f\left(x_1(\bm{y}), \cdots, x_n(\bm{y})\right)
 \]
+$d\bm{y}$だけ動いた時に$\bm{x}$空間で動く体積が$\left|\frac{\partial (x_1, \cdots , x_n)}{\partial (y_1, \cdots ,y_n)}\right|$
 
 \end{itemize}
 
 \newpage
 
 \section{Value the Eigenvalue}
+\subsection{Appetizer: Wigner's surmise}
 \begin{itemize}
+    \item $2\times 2$のGOE行列$H_s := \begin{pmatrix}
+        x_1 & x_3\\
+        x_3 & x_2
+    \end{pmatrix}$
+    で、$x_1, x_2\sim N(0, 1)$、$x_3\sim N(0,\frac{1}{2})$に従う時、
+    固有値間隔$s:=|\lambda_1 -\lambda_2|$の分布$p(s)$はどのようになるか？
+
+    \[
+    p(s) = \frac{s}{2}e^{-\frac{s^2}{4}}
+    \]
+    この分布は固有値同士が重なる確率が0、つまり固有値同士は反発することを意味する。
+
+    証明は、$p(s)=\int dx_1 \frac{e^{-\frac{x_1^2}{2}}}{\sqrt{2\pi}}\,dx_2  \frac{e^{-\frac{x_2^2}{2}}}{\sqrt{2\pi}}\,dx_3\frac{e^{-x_3^2}}{\sqrt{\pi}}\,\delta(s-|\lambda_1 - \lambda_2|)$を変数変換して計算するだけ。
+    変数変換したあと積分が実行できるためには、非対角成分の分散が対角成分の分散の$\frac{1}{2}$になっていることが必要。
+    
+    \sk
+    \item 確率分布$p(x)$を期待値が1になるようリスケールした分布$\tilde{p}(x)$は？
+    
+    \[
+    \tilde{p}(x) := \langle x \rangle \,p(\langle x \rangle x)
+    \]
+    横向きに$\frac{1}{\langle x\rangle}$倍、縦向きに$\langle x \rangle$倍すれば良い。
+
+    \sk
     \item Wigner予想とは？
     
-    ランダム行列の固有値間隔の分布についての予想。$2\times 2$のGOEの固有値間隔$s$の分布$P(s)$を期待値が1になるようリスケールした分布$\tilde{P}(s)$は
+    ランダム行列の固有値間隔の分布についての予想。$p(s)$を$s$の期待値が1になるようリスケールした分布$\tilde{p}(s)$は
     \[
-    \tilde{P}(s)=\frac{\pi}{2}s\,\exp(-\frac{\pi}{4}s^2)
+    \tilde{p}(s)=\frac{\pi}{2}s\,\exp(-\frac{\pi}{4}s^2)
     \]
-    となるが、$N\times N$でも似た分布になると予想した。
-    この分布は固有値同士が重なる確率が0、つまり固有値同士は反発することを意味する。
+    となるが、$N\times N$でもリスケールしたものは似た分布になると予想した。
+\end{itemize}
+
+\subsection{Eigenvalues as correlated random variables}
+\begin{itemize}
+    \item level repulsionとは？
+
 \end{itemize}
 
 
