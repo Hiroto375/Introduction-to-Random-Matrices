@@ -149,7 +149,26 @@ $d\bm{y}$だけ動いた時に$\bm{x}$空間で動く体積が$\left|\frac{\part
     確率変数がそれぞれ同じ確率分布に従って、かつ互いに独立している状況のこと。
 
     \sk
-    \item i.i.d.である確率変数の間隔分布は？
+    \item i.i.d.である確率変数の間隔分布は？\\
+    地点$x$の近傍においてある変数とその次の変数までの距離が$s$となる確率密度$p(s)$は
+    \begin{align}
+        p(s)=Np(x)\,e^{-Np(x)s}
+    \end{align}
+    i.i.d.では近傍に含まれる変数の個数が2項分布に従い、$N\to\infty$においてそれがPoisson分布に変化するため
+    
+    \sk
+    \item $p(x)dx$を含む積分をする時は？\\
+    $p(x)$のCDFである$F(x)$が現れたとしても$dF(x)=p(x)dx$となるので、積分対象にCDFが現れても良い
+\end{itemize}
+
+\sk
+\subsection{Jpdf of Eigenvalues of Gaussian Matrices}
+\begin{itemize}
+    \item $N(0,1)$に従うGaussian Ensembleの固有値$\{\lambda_i\}$のJPDFは？\\
+    \begin{align}
+        \rho(\lambda_1,\cdots,\lambda_N)=\frac{1}{Z_{N,\beta}}\exp\left(-\frac{1}{2}\displaystyle\sum_i \lambda_i^2\right) \prod_{j<k}\|\lambda_j-\lambda_k\|^\beta
+    \end{align}
+ただし、$Z_{N,\beta}=(2\pi)^{\frac{N}{2}}\displaystyle\prod_j\frac{\Gamma(1+\frac{j\beta}{2})}{\Gamma(1+\frac{\beta}{2})}$
 \end{itemize}
 
 \newpage
